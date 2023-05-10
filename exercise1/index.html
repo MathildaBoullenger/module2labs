@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This page is a home page and will is linked to a form" />
+    <meta name="keywords" content="homepage" content="form" />
+    <meta name="author" content="Mathilda" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Home &#128515;</title>
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+
+    <script>
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (!isChrome) {
+            $('#iframeAudio').remove()
+        }
+        else {
+            $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- works like <a href="/index.html">Home</a> -->
+            <a href="/">Home</a>
+            <a href="form.html">Form</a>
+        </nav>
+    </header>
+    <main>
+        <h1>My HTML learning journey</h1>
+        <article>
+            <!-- Content added in previous points -->
+            <h2>Learning elements - div, span, p, pre, ul, li, ol, article</h2>
+            <div>dog</div>
+            <div>cat</div>
+            <div>rabbit</div>
+
+            <span>red</span>
+            <span>pink</span>
+            <span>green</span>
+
+            <p>p represents paragraph</p>
+            <pre>Text in         a pre element
+    is displayed in a fixed-width
+    font, and it preserves
+    both      spaces and
+    line breaks
+    </pre>
+
+            <ul>
+                <li>First element of an unordered list</li>
+                <li>Second element of an unordered list</li>
+                <li>Third element of an unordered list</li>
+            </ul>
+
+            <ol>
+                <li>First element of an unordered list</li>
+                <li>Second element of an unordered list</li>
+                <li>Third element of an unordered list</li>
+            </ol>
+        </article>
+
+        <article>
+            <h2>HTML elements - Tables - table, thead, tbody, tr, td, th</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">First header</th>
+                        <th>Second header</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>First cell - first row</td>
+                        <td>Second cell - first row</td>
+                        <td>Third cell - first row</td>
+                    </tr>
+                    <tr>
+                        <td>First cell - second row</td>
+                        <td>Second cell - second row</td>
+                        <td rowspan="2">Third cell - second row</td>
+                    </tr>
+                    <tr>
+                        <td>First cell - third row</td>
+                        <td>Second cell - third row</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <img src="https://picsum.photos/200/300" alt="" />
+
+            <video autoplay muted loop width="250">
+                <source src="/assets/flower.mp4" type="video/mp4">
+                Sorry, your browser doesn't support embedded videos.
+            </video>
+
+            <!--<audio controls>
+            <source src="/assets/t-rex-roar.mp3" type="audio/mp3">
+                Your browser does not support the <code>audio</code> element.
+            </audio>-->
+
+            <iframe src="/assets/t-rex-roar.mp3" allow="autoplay" id="audio" hidden></iframe>
+            <!-- <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none;"></iframe> -->
+            <audio id="player" autoplay controls loop>
+                <source src="/assets/t-rex-roar.mp3" type="audio/mp3">
+            </audio>
+
+        </article>
+
+    </main>
+    <footer>Copyright 2021 &copy;</footer>
+</body>
+
+</html>

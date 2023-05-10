@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* I. Selectors */
+
+        /* Put styles for sections 1.1, 1.2, 1.3 and 1.4 here */
+
+        article {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        .style-me1 {
+            color: red;
+        }
+
+        #style-me2 {
+            color: blue;
+        }
+
+        #style-me2.style-me1 {
+            color: purple;
+        }
+
+        /* Styles for sections 2.1, 2.2 */
+
+        .my-descendants-are-styled p {
+            background-color: red;
+        }
+
+        .my-children-are-styled p {
+            background-color: red;
+        }
+
+        /* II. Box model and common properties */
+
+        .box {
+            margin: 50px;
+            padding: 20px;
+            height: 500px;
+            width: 500px;
+            border-style: double;
+            border-width: 10px;
+            border-color: palevioletred;
+            border-radius: 50%;
+            box-sizing: border-box;
+            overflow: scroll;
+            outline: 10px solid orange;
+            background-image: url("assets/aida-batres-_QxzSVWesm0-unsplash.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+
+        /* 2.3 When resizing the browser window, the second box's size remains relative to the window.*/
+        /* 5.2 I chose scroll which enables users to scroll to see text that is hidden.*/
+
+        /* III. Position */
+
+        .position-absolute {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+        }
+
+        /*The .position-absolute class is positionned relatively to the viewport as it doesn't have a positionned parent. This class containes two elements*/
+        /*The z-index defines depth. If this element above was in the same place as the other absolute element, it would be displayed in front. The default z-index value is 0*/
+
+        .position-relative {
+            position: relative;
+            top: 50%;
+            left: 50%;
+        }
+
+        /*The .position-relative class is positionned relatively to its normal (static) position"*/
+
+        .position-relative .position-absolute {
+            position: absolute;
+            top: 100%;
+            left: 100%;
+        }
+
+        /*The above styling positionnes the absolute class relatively to the relative class because its position has been defined above*/
+
+        .position-sticky {
+            position: sticky;
+            top: 50%;
+            left: 50%;
+        }
+
+        /* From the initial position onwards, this element will be displayed in the middle of the viewport - regardless of scrolling */
+
+        /* IV. Styling text */
+
+        .text-style {
+            color: grey;
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 400;
+            font-family: 'Catamaran', sans-serif;
+            text-align: center;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+            text-transform: lowercase;
+            text-decoration: underline wavy;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap');
+
+        /* V Styling links */
+
+        a:link {
+            color: red;
+        }
+
+
+        a {
+            color: blue;
+            /* This colour will be overridden by the next above because it is more specific */
+            font-size: large;
+            font-weight: 600;
+            font-style: italic;
+            text-decoration: underline;
+            border: red solid 5px;
+        }
+
+        a:hover {
+            background-color: yellow;
+        }
+
+        a:active {
+            background-color: pink;
+        }
+
+        /* active means that I am right clicking on it */
+
+        a:focus {
+            background-color: green;
+        }
+
+        a:visited {
+            color:blueviolet
+        }
+
+        /* VI. calc() */
+
+        .calc-style {
+            width: 100vw;
+            width: calc(100vw - 100px);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <h1>My CSS journey</h1>
+
+    <article>
+        <h2>I. Selectors</h2>
+
+        <section>
+            <p class="style-me1">
+                1.2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p id="style-me2">
+                1.3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p id="style-me2" class="style-me1">
+                1.4. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </section>
+
+        <section class="my-children-are-styled">
+            <h3>Direct children &lt;p&gt; are styled</h3>
+            <div>
+                <p>I'm not a direct child, but I'm a descendant</p>
+            </div>
+            <p>I'm a direct child, therefore I'm a descendant</p>
+        </section>
+
+        <section class="my-descendants-are-styled">
+            <h3>Descendants &lt;p&gt; are styled</h3>
+            <div>
+                <p>I'm not a direct child, but I'm a descendant</p>
+            </div>
+            <p>I'm a direct child, therefore I'm a descendant</p>
+        </section>
+    </article>
+
+    <article>
+        <h2>II. Box model and common properties</h2>
+        <div class="box">I'm the first box.</div>
+        <div class="box">
+            I'm second and I have a lot of content. In publishing and graphic
+            design, Lorem ipsum is a placeholder text commonly used to demonstrate
+            the visual form of a document or a typeface without relying on
+            meaningful content. "Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+            qui officia deserunt mollit anim id est laborum."
+        </div>
+        <div class="box" style="height: 200px">
+            My height is set using directly using style attribute.
+        </div>
+    </article>
+
+    <article>
+        <h2>III. Positioning</h2>
+        <div class="position-absolute">I'm absolutely positioned. Because I don't have a positionned parent element, I
+            am positionned relative to the viewport.</div>
+
+        <div class="position-relative">
+            I'm relatively positioned, relative to my static / default position.
+            <div class="position-absolute">I'm absolutely positioned. I have a positionned parent: position-relative.
+            </div>
+        </div>
+    </article>
+    <div class="position-sticky">I'm sticky positioned.</div>
+
+    <article>
+        <h2>IV. Styling text</h2>
+        <p class="text-style">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum."
+        </p>
+    </article>
+
+    <article>
+        <h2>V. Styling links</h2>
+        <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links"
+            alt="Styling links with Mozilla">Styling links (Mozilla)</a>
+    </article>
+
+    <article>
+        <h2>VI. calc()</h2>
+        <div class="calc-style">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum."
+        </div>
+    </article>
+
+    <div style="height: 1000px; background: #AA99CC">
+        I'm here just for height, to fill in extra space and pretend that the website is longer than it really is :).
+    </div>
+</body>
+
+</html>

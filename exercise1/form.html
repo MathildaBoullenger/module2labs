@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- works like <a href="/index.html">Home</a> -->
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <main>
+        <form method="POST" action="http://localhost:3000/profile">
+            <div>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="name" placeholder="Type first name here" required>
+            </div>
+
+            <div>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="name" placeholder="Type last name here" required>
+            </div>
+
+            <div>
+                <legend>Gender</legend>
+                <label>
+                    <input type="radio" name="gender" value="male">
+                    Male
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="female">
+                    Female
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="other">
+                    Other
+                    <input type="text" name="other_gender" placeholder="Please specify">
+            </div>
+
+            <div>
+                <legend>Select your hobbies from the list below:</legend>
+                <label>
+                    <input type="checkbox" name="hobbies" value="reading">
+                    Reading
+                </label>
+                <label>
+                    <input type="checkbox" name="hobbies" value="hiking">
+                    Hiking
+                </label>
+                <label>
+                    <input type="checkbox" name="hobbies" value="gaming">
+                    Gaming
+                </label>
+                <label>
+                    <input type="checkbox" name="hobbies" value="swimming">
+                    Swimming
+                </label>
+                <label>
+                    <input type="checkbox" name="hobbies" value="painting">
+                    Painting
+                </label>
+            </div>
+
+            <button type="submit">Submit form</button>
+
+        </form>
+    </main>
+    </form>
+    </main>
+    <footer>Copyright 2021 &copy;</footer>
+</body>
+
+</html>

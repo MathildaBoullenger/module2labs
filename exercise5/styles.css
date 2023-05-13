@@ -187,4 +187,23 @@ h2 {
   }
 }
 
+/* Show the small image for screens less than 600px wide */
+@media (max-width: 600px) {
+  .small-screen {
+    display: block;
+  }
+  .large-screen {
+    display: none;
+  }
+}
+
+/* Show the large image for screens 600px or wider */
+@media (min-width: 600px) {
+  .small-screen {
+    display: none;
+  }
+  .large-screen {
+    display: block;
+  }
+}
 </style>
